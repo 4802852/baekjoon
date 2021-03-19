@@ -10,8 +10,13 @@ def prime(n):
     return [i for i in range(2, n) if prime[i] is True]
 
 
-m, n = map(int, sys.stdin.readline().split())
-p = prime(n + 1)
-for i in range(len(p)):
-    if m <= p[i]:
-        print(p[i])
+while 1:
+    n = int(sys.stdin.readline())
+    if n == 0:
+        break
+    p = prime(2 * n + 1)
+    count = 0
+    for i in range(len(p)):
+        if n < p[i]:
+            count += 1
+    print(count)
