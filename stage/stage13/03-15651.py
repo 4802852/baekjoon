@@ -5,17 +5,15 @@ n, m = map(int, sys.stdin.readline().split())
 c = [i for i in range(1, n + 1)]
 
 
-def visit(d, m):
+def visit(c, m):
     ans = []
-    if m == 0 or m > len(d):
+    if m == 0 or m > len(c):
         return ans
     elif m == 1:
-        return list(map(lambda x: (x,), d))
+        return list(map(lambda x: (x,), c))
     else:
-        for i in range(len(d)):
-            temp = d[:]
-            temp.remove(d[i])
-            ans += tuple(map(lambda x: (d[i],) + x, visit(temp, m - 1)))
+        for i in range(len(c)):
+            ans += tuple(map(lambda x: (c[i],) + x, visit(c, m - 1)))
     return ans
 
 
