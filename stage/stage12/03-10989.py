@@ -2,10 +2,11 @@ import sys
 
 
 n = int(sys.stdin.readline())
-array = []
+array = [0] * 10001
 for i in range(n):
     a = int(sys.stdin.readline())
-    array.append(a)
-array.sort()
+    array[a] += 1
 for i in range(len(array)):
-    print(array[i])
+    if array[i] > 0:
+        for j in range(array[i]):
+            print(i)
