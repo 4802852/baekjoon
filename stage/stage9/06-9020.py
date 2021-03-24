@@ -2,12 +2,12 @@ import sys
 
 
 def prime(n):
-    prime = [True] * n
+    prime_num = [True] * n
     for i in range(2, int(n**0.5) + 1):
-        if prime[i] is True:
+        if prime_num[i] is True:
             for j in range(2 * i, n, i):
-                prime[j] = False
-    return [i for i in range(2, n) if prime[i] is True]
+                prime_num[j] = False
+    return [i for i in range(2, n) if prime_num[i] is True]
 
 
 p = prime(10001)
