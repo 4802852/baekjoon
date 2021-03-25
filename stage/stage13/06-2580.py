@@ -6,6 +6,7 @@ for i in range(9):
     a = list(map(int, sys.stdin.readline().split()))
     sudoku.append(a)
 zeros = [(i, j) for i in range(9) for j in range(9) if sudoku[i][j] == 0]
+ans = False
 
 
 def check(i, j):
@@ -22,9 +23,6 @@ def check(i, j):
             if sudoku[p][q] in pool:
                 pool.remove(sudoku[p][q])
     return pool
-
-
-ans = False
 
 
 def solve_sudoku(x):

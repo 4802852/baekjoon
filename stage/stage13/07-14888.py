@@ -5,18 +5,18 @@ import sys
 n = int(sys.stdin.readline())
 number_list = list(map(int, sys.stdin.readline().split()))
 a, b, c, d = map(int, sys.stdin.readline().split())
-cal_list = ['p' for i in range(a)] + ['m' for j in range(b)] + ['u' for k in range(c)] + ['d' for l in range(d)]
+cal_list = ['+' for i in range(a)] + ['-' for j in range(b)] + ['*' for k in range(c)] + ['/' for l in range(d)]
 cal_used = [False for x in range(len(cal_list))]
 ans = []
 temp = [number_list[0]]
 
 
 def calculate(e, g, f):
-    if g == 'p':
+    if g == '+':
         return e + f
-    elif g == 'm':
+    elif g == '-':
         return e - f
-    elif g == 'u':
+    elif g == '*':
         return e * f
     else:
         if e * f < 0:
