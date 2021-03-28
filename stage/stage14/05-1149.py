@@ -16,9 +16,6 @@ for j in range(1, n + 1):
 print(min(min_price[n]))
 
 
-
-
-
 # prev = []
 # price2 = []
 # price_sum_list = []
