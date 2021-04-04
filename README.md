@@ -1,2 +1,2 @@
-# Baekjoon Practice
+# Baekjoon Online Judge
 
