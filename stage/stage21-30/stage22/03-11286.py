@@ -6,7 +6,7 @@ def heapappend(heap, num):
 
     i = len(heap) - 1
     while i > 1:
-        if heap[i] < heap[i // 2]:
+        if abs(heap[i]) < abs(heap[i // 2]) or (abs(heap[i]) == abs(heap[i // 2]) and heap[i] < heap[i // 2]):
             tmp = heap[i]
             heap[i] = heap[i // 2]
             heap[i // 2] = tmp
@@ -22,9 +22,10 @@ def heappop(heap):
     parent = 1
     child = 2
     while child <= len(heap) - 1:
-        if child < len(heap) - 1 and heap[child] > heap[child + 1]:
+        if child < len(heap) - 1 and (abs(heap[child]) > abs(heap[child + 1])
+                                      or (abs(heap[child]) == abs(heap[child + 1]) and heap[child] > heap[child + 1])):
             child += 1
-        if heap[child] >= tmp:
+        if abs(heap[child]) > abs(tmp) or (abs(heap[child]) == abs(tmp) and heap[child] > tmp):
             break
         heap[parent] = heap[child]
         parent = child
