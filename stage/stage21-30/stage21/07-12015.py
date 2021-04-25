@@ -18,6 +18,6 @@ for i in range(n):
     if low >= len(dp):
         dp.append(a[i])
     else:
-        dp[low] = a[i]
+        dp[low] = min(dp[low], a[i])
 
 print(len(dp) - 1)
