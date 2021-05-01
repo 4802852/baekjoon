@@ -2,7 +2,7 @@ import sys
 
 
 def find(x):
-    if connect[x] == x:
+    if connect[x] < 0:
         return x
     p = find(connect[x])
     connect[x] = p
@@ -10,12 +10,17 @@ def find(x):
 
 
 def union(x, y):
-    connect[y] = x
+    if connect[x] < connect[y]:
+        connect[x] += connect[y]
+        connect[y] = x
+    else:
+        connect[y] += connect[x]
+        connect[x] = y
 
 
 sys.setrecursionlimit(10 ** 9)
 n, m = map(int, sys.stdin.readline().split())
-connect = [i for i in range(n)]
+connect = [-1 for i in range(n)]
 i = 0
 ans = 0
 while i != m:
