@@ -23,4 +23,3 @@ for _ in range(n):
                 s.discard(x)
             else:
                 s.add(x)
-
