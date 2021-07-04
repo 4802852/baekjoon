@@ -4,7 +4,8 @@ For Algorithm Study
 
 ###Fail to solve
 
-27-05 경찰차
+27-05 경찰차  
+37-01 SCC (tarjan algorithm 이해 못함)
 
 ### STAGE34 문자열 알고리즘 1
 
@@ -30,10 +31,13 @@ B 를 분석하여 반복 일치하는 문구의 위치 및 길이를 저장하�
 
 ###STAGE36 최소 공통 조상
 
-**최소 공통 조상(Lowest Common Ancestor)**
+**최소 공통 조상(Lowest Common , LCA)**
 
 트리 상에서 u, v 노드가 있을 때, u 와 v 의 공통 조상이면서 가장 깊이가 깊은 조상.  
 크기가 N 인 트리에서 한 칸씩 이동하며 탐색한다면 LCA 를 찾는 탐색의 시간복잡도는 O(N) 이지만, 희소 테이블(Sparse Table) 을 미리 계산하여 저장해둔다면 시간복잡도 O(logN) 수준으로 빠르게 진행할 수 있음.  
 희소 테이블 DP[i][j] 에는 i 노드의 2^j 번째 조상을 저장함.
 
+###STAGE37 강한 연결 요소
+
+**강한 연결 요소(Strongly Connected Component, SCC)**
 
