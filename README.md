@@ -5,7 +5,6 @@ For Algorithm Study
 ###Fail to solve
 
 27-05 경찰차  
-37-01 SCC (tarjan algorithm 이해 못함)
 
 ### STAGE34 문자열 알고리즘 1
 
