@@ -5,7 +5,7 @@ For Algorithm Study
 ###Fail to solve
 
 27-05 경찰차
-37-04 ATM (답은 나오는데 백준 ac 못받음)
+37-04 ATM (답은 나오는데 백준 ac 못받음, 이유 재검토 필요)
 
 ### STAGE34 문자열 알고리즘 1
 
