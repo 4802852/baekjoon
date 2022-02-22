@@ -28,6 +28,7 @@ min_val = [4]
 
 
 def ladder_down(s):
+    # s에서 출발하는 사다리가 도착하는 위치를 리턴
     p = 0
     while p < H:
         if s < N - 1 and ladder[s][p] == 1:
@@ -39,6 +40,7 @@ def ladder_down(s):
 
 
 def check():
+    # i번 출발지-i번 도착지 연결이 이루어졌는지 확인하여 리턴
     flag = True
     s = 0
     while flag and s < N:
@@ -50,11 +52,14 @@ def check():
 
 def solve(depth, position_list, index):
     if min_val[0] <= depth or 3 < depth:
+        # 이미 구해진 최대 사다리 개수보다 클 경우, 사다리를 3개 이상 사용해야 할 경우 계산 종료
         return
     if check():
+        # 사다리가 조건을 만족했을 경우, 최소 사다리 개수 갱신
         min_val[0] = min(min_val[0], depth)
     for i in range(index + 1, len(position_list)):
         r, c = position_list[i]
+        # 사다리가 있을 수 없는 조건 continue
         if r < N - 2 and ladder[r + 1][c] == 1:
             continue
         if 0 < r and ladder[r - 1][c] == 1:
