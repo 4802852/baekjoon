@@ -7,9 +7,9 @@ dy = [0, 0, 1, -1]
 
 def bfs():
     q = deque()
-    q.append([0, 0, 1])
-    visit = [[[0] * 2 for _ in range(m)] for __ in range(n)]
-    visit[0][0][1] = 1
+    q.append([0, 0, 0])
+    visit = [[[float("inf")] * 2 for _ in range(m)] for __ in range(n)]
+    visit[0][0][0] = 1
     while q:
         x, y, w = q.popleft()
         if x == n - 1 and y == m - 1:
@@ -18,12 +18,16 @@ def bfs():
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < n and 0 <= ny < m:
-                if location[nx][ny] == 1 and w == 1:
-                    visit[nx][ny][0] = visit[x][y][1] + 1
-                    q.append([nx, ny, 0])
-                elif location[nx][ny] == 0 and visit[nx][ny][w] == 0:
+                if location[nx][ny] == 0 and visit[x][y][w] + 1 < visit[nx][ny][w]:
                     visit[nx][ny][w] = visit[x][y][w] + 1
                     q.append([nx, ny, w])
+                elif (
+                    location[nx][ny] == 1
+                    and w < 1
+                    and visit[x][y][w] + 1 < visit[nx][ny][w + 1]
+                ):
+                    visit[nx][ny][w + 1] = visit[x][y][w] + 1
+                    q.append([nx, ny, w + 1])
     return -1
 
 
